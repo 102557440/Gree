@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+/*第六层 (家用中央空调)*/
+
+
+/*第七层 (格力手机)*/
+
+@import "wrapper";
+.floor_6_show,
+.floor_7_show {
+    @include mx_piclist(180px, 200px, 248px, 0px);
+    height: 248px;
+    ul {
+        li {
+            &:first-child {
+                border: none;
+            }
+            a {
+                position: relative;
+                img {
+                    transform: translateX(-10px);
+                }
+                span {
+                    position: absolute;
+                    bottom: 8px;
+                    left: 25%;
+                }
+            }
+        }
+    }
+}
+
+.floor_6,
+.floor_7 {
+    height: 460px;
+    .title {
+        .title_right {
+            width: 700px;
+        }
+    }
+}
+
+
+/* 猜你喜欢 */
+
+.line {
+    width: 980px;
+    height: 1px;
+    margin: 27px auto;
+    position: relative;
+    background: #cc0000;
+    span {
+        display: block;
+        width: 180px;
+        height: 35px;
+        position: absolute;
+        top: -8px;
+        left: 50%;
+        transform: translateX(-90px);
+        color: #cc0000;
+        font-size: 16px;
+        background: #fff;
+        text-align: center;
+    }
+}

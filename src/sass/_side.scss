@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+/* side_bar */
+
+//左侧广告条
+.side_bar {
+    width: 140px;
+    height: 430px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-215px);
+    margin-left: -635px;
+    z-index: 1000;
+    display: none;
+}
+
+
+/* side_nav */
+
+//右侧楼层导航
+.side_nav {
+    width: 111px;
+    height: 475px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-215px);
+    overflow: hidden;
+    margin-left: 515px;
+    z-index: 50;
+    display: none;
+    ul {
+        li {
+            text-indent: -9999px;
+            overflow: hidden;
+            height: 42px;
+            margin-top: 1px;
+            background: url(../images/right_nav.png) no-repeat;
+            -webkit-transition: background .2s ease;
+            cursor: pointer;
+            &:hover {
+                background-position: -111px 0;
+            }
+        }
+        $x: -222px;
+        $hoverx:-111px;
+        @for $i from 1 to 8 {
+            li:nth-child(#{$i + 1}) {
+                background-position: $x*$i 0;
+            }
+            li:nth-child(#{$i + 1}):hover {
+                background-position: $x*$i + $hoverx 0;
+            }
+        }
+        li:nth-child(9) {
+            background-position: -1998px 0;
+        }
+        li:nth-child(9):hover {
+            background-position: -2109px 0;
+        }
+    }
+}
+
+
+/* gree_code */
+
+//二维码
+.gree_code {
+    left: 5px;
+    bottom: 0;
+    position: fixed;
+}
+
+
+/* kefu*/
+
+//kefu
+.kefu {
+    position: fixed;
+    right: 5px;
+    width: 69px;
+    bottom: 65px;
+    cursor: pointer;
+}
+
+
+/* back_top */
+
+//返回顶部
+.back_top {
+    position: fixed;
+    bottom: 0;
+    right: 5px;
+    z-index: 10000000;
+    color: #666;
+    width: 69px;
+    height: 61px;
+    cursor: pointer;
+    text-indent: -99999px;
+    a {
+        s {
+            background: url(../images/kefuIcon.png) 0px -181px no-repeat scroll;
+            display: block;
+            width: 69px;
+            height: 61px;
+            &:hover {
+                background-position: -73px -181px
+            }
+        }
+    }
+}

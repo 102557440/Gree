@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+/*floor_1 第一层 (热销推荐)*/
+
+@import "wrapper";
+.rexiao {
+    @include mx_piclist(245px, 245px, 275px, 12px);
+}
+
+//
+.rexiao {
+    position: relative;
+    .rexiaobg {
+        background: url(../images/bg.png) -80px -227px no-repeat;
+        top: 0;
+        left: 427px;
+        position: absolute;
+        padding-left: 36px;
+        width: 127px;
+        height: 33px;
+        padding-top: 2px;
+        color: #fff;
+    }
+}

@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+/*第四层 (冰箱/洗衣机)*/
+
+.floor_4 {
+    width: 708px;
+}
+
+@import "wrapper";
+.floor_4_show {
+    @include mx_piclist(180px, 200px, 248px, 0px);
+    height: 496px;
+    ul {
+        li {
+            &:first-child {
+                border: none;
+            }
+            a {
+                position: relative;
+                img {
+                    transform: translateX(-10px);
+                }
+                span {
+                    position: absolute;
+                    bottom: 8px;
+                    left: 25%;
+                }
+            }
+        }
+    }
+}
