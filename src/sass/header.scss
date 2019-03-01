@@ -95,7 +95,7 @@ $color3:#c00;
     }
     .topbarbox_right {
         float: right;
-        width: 365px;
+        width: auto;
         height: $height;
         li {
             float: left;
@@ -232,19 +232,19 @@ $color3:#c00;
                 color: #999;
                 padding: 5px;
             }
-            &:nth-child(2) {
-                display: block;
-                float: right;
-                font: 700 14px Arial, "微软雅黑";
-                color: #fff;
-                background: $color3;
-                width: 77px;
-                height: 30px;
-                cursor: pointer;
-                -webkit-appearance: none;
-                border-right: $color3;
-            }
         }
+    }
+    #sub {
+        display: block;
+        float: right;
+        font: 700 14px Arial, "微软雅黑";
+        color: #fff;
+        background: $color3;
+        width: 77px;
+        height: 30px;
+        cursor: pointer;
+        -webkit-appearance: none;
+        border-right: $color3;
     }
     .hot_words {
         color: #999;

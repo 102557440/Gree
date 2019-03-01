@@ -158,6 +158,11 @@
         }
         delcookiecart($(this).parents('ul').find('.cart_goods img').attr('sid'), arrsid);
         allprice();
+        if ($(".cart_list").find(".modleul").length == 1) {
+            $(".f1,.f3").find("span").html(" ");
+            $(".empty").show();
+        }
+
     });
     //清空购物车
     $('#delallgoods').click(function() {
@@ -165,16 +170,29 @@
         if (confirm('你确定要全部删除吗？')) {
             delcookie('cookiesid'); //调用封装的cookie方法
             delcookie('cookienum');
+            $(".cart_list").find(".modleul:visible").remove();
+            $(".f1,.f3").find("span").html(" ");
+            $(".empty").show();
         }
     });
     //删除选择商品
     $('#delselgoods').click(function() {
         cookietoarray();
+
         if (confirm('你确定要删除所选商品吗？')) {
-            if ($('.modleul:visible').find(':checkbox').is(':checked')) {
-                $('.modleul:visible').find('.onesel:checked').parents('ul').remove();
-                delcookiecart($('.modleul:visible').find('.onesel:checked').parents('ul').find('.cart_goods img').attr('sid'), arrsid);
-            }
+            $(".modleul:visible").each(function(index, ele) {
+                if ($('.modleul:visible').find(':checkbox').is(':checked')) {
+                    $('.modleul:visible').find('.onesel:checked').parents('ul').remove();
+                    allprice();
+                    delcookiecart($('.modleul:visible').find('.onesel:checked').parents('ul').find('.cart_goods img').attr('sid'), arrsid);
+
+                }
+            })
+
+        }
+        if ($(".cart_list").find(".modleul").length == 1) {
+            $(".f1,.f3").find("span").html(" ");
+            $(".empty").show();
         }
     });
 

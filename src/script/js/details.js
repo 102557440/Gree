@@ -60,17 +60,7 @@
     //点击加入购物车按钮后弹出模态框
     function bgbox() {
         $('.bgbox').css('display', 'block');
-        var bgtimer;
-        var bgtime = 3;
-        bgtimer = setInterval(function() {
-            bgtime--;
-            $('.bgbox span').html(bgtime);
-            if (bgtime == 0) {
-                clearInterval(bgtimer);
-                $('.selectbox').css('display', 'block');
-                $('.bgbox span').html('');
-            }
-        }, 700);
+        $('.selectbox').css('display', 'block');
         //关闭按钮
         $('#bgclose').click(function() {
             $('.bgbox').css('display', 'none');

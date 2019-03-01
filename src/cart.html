@@ -22,7 +22,7 @@
         <div class="empty">
             <h2>
                 购物车内暂时没有商品，
-                <a href="./login.html">登录</a> 后可同步电脑与手机购物车
+                <a href="http://10.31.162.198/1810-2/Project/dist/login.html">登录</a> 后可同步电脑与手机购物车
             </h2>
         </div>
         <div class="caption">
@@ -54,7 +54,7 @@
                 </li>
                 <li class="cart_goods">
                     <a href="" id="pic">
-                        <img src="https://mall.gree.com/wcsstore/GreeStorefrontAssetStore/images/product/KB452041600/60X60/KB452041600_01.jpg" alt="">
+                        <img src="" alt="">
                     </a>
                     <a href="" id="title">
 					品圆变频空调_高效变频 节能运行_KFR-35GW/(35592)FNhDa-A3 白色 冷暖1.5匹机 挂壁式 16-24平方米适用
@@ -104,12 +104,16 @@
             </ul>
         </div>
         <div class="cart_account">
-            <a href="./GREE.html">继续购物</a>
+            <a href="http://10.31.162.198/1810-2/Project/dist/">继续购物</a>
             <a id="gobuy" href="javascript:;">去结算</a>
         </div>
     </div>
     <div class="footer"></div>
     <script src="./script/thirdplugins/jquery.min.js"></script>
+    <script src="./script/thirdplugins/jquery.lazyload.min.js"></script>
+    <script src="./script/thirdplugins/cookie.js"></script>
+    <script src="./script/js/cart.js"></script>
+    <script src="./script/js/all.js"></script>
     <script>
         $('.header').load('header.html .headerbox .topbar', function() {
             //判断登录状态
@@ -124,8 +128,7 @@
         });
         $('.footer').load('footer.html');
     </script>
-    <script src="./script/js/cookie.js"></script>
-    <script src="./script/js/cart.js"></script>
+
 </body>
 
 </html>

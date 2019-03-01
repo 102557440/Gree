@@ -9,12 +9,12 @@
     $result = mysql_fetch_array($data); //将查询结果提取成数组
     // print_r($result);
     if($result){
-        echo '{"status":200,"msg":"该账号已注册","res":false}';
+        echo '{"msg":"该账号已注册","res":false}';
     }else{
         $sql2 = "INSERT INTO `user`(`username`,`password`,`zhucetime`) VALUES ('$username','$password',NOW())";
         $count = mysql_query($sql2); // 增加 删除 修改 返回受影响的行数
         if($count==1){
-            echo '{"status":200,"msg":"注册成功","res":true}';
+            echo '{"msg":"注册成功","res":true}';
         }
     }
 

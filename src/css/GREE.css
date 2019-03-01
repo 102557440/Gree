@@ -86,7 +86,7 @@ a {
 }
 .topbarbox .topbarbox_right {
   float: right;
-  width: 365px;
+  width: auto;
   height: 24px;
 }
 .topbarbox .topbarbox_right li {
@@ -204,7 +204,7 @@ a {
   color: #999;
   padding: 5px;
 }
-.serach_wrapper .input input:nth-child(2) {
+.serach_wrapper #sub {
   display: block;
   float: right;
   font: 700 14px Arial, "微软雅黑";

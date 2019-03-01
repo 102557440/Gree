@@ -74,19 +74,16 @@
             });
         });
         $('#side_nav ul li:last-child').click(function() {
-            location.href = 'http://10.31.162.198/1810-2/Project/src/cart.html';
+            location.href = 'http://10.31.162.198/1810-2/Project/dist/cart.html';
         });
     };
     //懒加载
-    // $(".wrapper li img").addClass("lazy").css({
-    //     width: 220,
-    //     height: 220
-    // }).attr("data-original", function() {
-    //     return $(this).attr("src")
-    // });
-    // $("img.lazy").lazyload({
-    //     effect: "fadeIn"
-    // });
+    $(".wrapper img").addClass("lazy").attr("data-original", function() {
+        return $(this).attr("src")
+    });
+    $("img.lazy").lazyload({
+        effect: "fadeIn"
+    });
     //3.数据库动态加载部分
     $.ajax({
         type: "get",
@@ -95,11 +92,13 @@
         dataType: "json",
     }).done(function(data) {
         var $html = '<ul>';
+        console.log(data);
+
         $.each(data, function(index, value) {
             $html += `
                     <li>
-                        <a href="http://10.31.162.198/1810-2/Project/src/details.html?sid=${value.id}" target="_blank">
-                            <img class="lazy" data-original="${value.pic}" width:"220" height:"220"/>                           
+                        <a href="http://10.31.162.198/1810-2/Project/dist/details.html?sid=${value.id}" target="_blank">
+                            <img class="lazy" data-original="${value.pic}" />                           
                             <span class="span_price">¥${value.price}</span>
                         </a>
                     </li>
@@ -128,8 +127,8 @@
         $.each(data, function(index, value) {
             $html += `
                     <li>
-                        <a href="http://10.31.162.198/1810-2/Project/src/details.html?sid=${value.id}" target="_blank">
-                            <img class="lazy" data-original="${value.pic}" width="160" height="160"/>
+                        <a href="http://10.31.162.198/1810-2/Project/dist/details.html?sid=${value.id}" target="_blank">
+                            <img class="lazy" data-original="${value.pic}"/>
                             <span class="span_title">${value.title}</span>
                             <span class="span_price">¥${value.price}</span>
                         </a>

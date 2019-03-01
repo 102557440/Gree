@@ -6,20 +6,10 @@ const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
 const watch = require('gulp-watch'); //添加此插件进行监听
 const imagemin = require('gulp-imagemin'); //图片压缩插件
-
-//1.新建gulp任务
-/*gulp.task('taskname',function(){//taskname:任务名称，如果任务名称设置为default，执行的时候，只需要gulp
-	console.log('hello,gulp123');
-});*/
-
-//2.将开放目录下面的文件复制到线上目录(无需插件)
-//gulp.src():引入文件的目录
-//gulp.dest() : 输出文件目录设置
-//pipe() : 管道（流）
-/* gulp.task('copyfile',function(){
-	return  gulp.src('src/index.html').pipe(gulp.dest('dist/'));
-}); */
-
+const babel = require('gulp-babel');
+// gulp.task('taskname', function() {
+//     console.log('hello,gulp');
+// });
 
 //3.sass编译--gulp-sass
 gulp.task('runsass', function() {
@@ -40,6 +30,9 @@ gulp.task('uglifyhtml', function() {
 //5.合并压缩js
 gulp.task('alljs', function() {
     return gulp.src('src/script/js/*.js')
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
         .pipe(concat('all.js')) //合并以及重命名
         .pipe(gulp.dest('dist/script/js')) //输出
         .pipe(rename('all.min.js')) //重命名
@@ -60,7 +53,7 @@ gulp.task('runimg', function() {
 //最终监听的写法
 //监听需要任务执行一次之后进行操作。
 /* gulp.task('default',function(){
-	watch的第一个参数监听的文件的路径，第二个参数是监听运行的任务名
+	//watch的第一个参数监听的文件的路径，第二个参数是监听运行的任务名
 	watch(['src/sass/style.scss','src.html','src/js.js'],gulp.parallel('runsass','uglifyhtml','alljs'));
 }); */
 

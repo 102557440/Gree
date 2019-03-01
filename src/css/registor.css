@@ -26,15 +26,15 @@ body {
   line-height: 28px;
   margin-bottom: 25px;
   position: absolute;
-  left: 46%;
+  left: 44%;
   top: 40%;
 }
 .bgbox p {
   font-weight: 600;
   color: red;
   position: absolute;
-  left: 42%;
-  top: 45%;
+  left: 44%;
+  top: 46%;
 }
 .bgbox p span {
   margin-right: 8px;
@@ -59,10 +59,14 @@ em {
   width: 980px;
   margin-top: 30px;
 }
-.registor > div {
+.registor #form1 > div {
   float: left;
   background: #fff;
   height: 420px;
+}
+
+.error {
+  color: red;
 }
 
 .registor_ad {
@@ -130,6 +134,7 @@ em {
   font-size: 14px;
   color: #999;
   line-height: 34px;
+  height: 34px;
 }
 .registor_box .list li span b {
   color: #f00;

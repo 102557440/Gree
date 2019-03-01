@@ -25,7 +25,7 @@ body {
         line-height: 28px;
         margin-bottom: 25px;
         position: absolute;
-        left: 46%;
+        left: 44%;
         top: 40%;
     }
     p {
@@ -58,7 +58,7 @@ em {
 .login {
     width: 980px;
     margin-top: 30px;
-    &>div {
+    #form1>div {
         float: left;
         background: #fff;
         height: 420px;
@@ -166,6 +166,7 @@ em {
                     display: inline-block;
                     width: 60px;
                     line-height: 34px;
+                    height: 34px;
                     letter-spacing: 5px;
                     margin: 0 10px;
                     background: #f1f1f1;

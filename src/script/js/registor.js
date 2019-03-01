@@ -155,9 +155,9 @@
                         timer = setInterval(function() {
                             $('#bgval').html(time);
                             time--;
-                            if (time == 0) {
+                            if (time < 0) {
                                 clearInterval(timer);
-                                location.href = 'http://10.31.162.198/1810-2/Project/src/login.html';
+                                location.href = 'http://10.31.162.198/1810-2/Project/dist/';
                             }
                         }, 800);
                     } else {
