@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><meta http-equiv=X-UA-Compatible content="ie=edge"><title>商品详情页</title><link rel="shortcut icon" href=./images/icon-favicon.ico type=image/x-icon><link rel=stylesheet href=./css/reset.css><link rel=stylesheet href=./css/details.css></head><body><div class=bgbox><span></span></div><div class=selectbox><h3>加入购物车成功</h3><a id=bgclose href=javascript:;>×</a><p>购买<span id=selectnum></span>件商品共计：<span id=selectprice></span></p><div><a href=./index.html>继续购物</a> <a href=./cart.html>去购物车结算</a></div></div><div class=header></div><div class=wrapper><div class=preview><div class=bigimg><img><div class=mouse></div><div class=show><img id=showimg></div></div><div class=smallimg><div class=box><a href=javascript:; class="prev sel"></a><ul class=imglist><li><a href=javascript:;><img></a></li><li><a href=javascript:;><img></a></li><li><a href=javascript:;><img></a></li><li><a href=javascript:;><img></a></li><li><a href=javascript:;><img></a></li></ul><a href=javascript:; class="next sel"></a></div></div></div><div class=info><h2></h2><h3></h3><dl><dt>商城价：</dt><dd><strong id=price></strong></dd></dl><dl><dt>已售出：</dt><dd id=sale></dd></dl><dl><dt>客服评价：</dt><dd><em></em></dd><dd id=evaluate></dd></dl><dl class=mgtop30><dt>配送：</dt><dd><div class=citybox><span class=city>杭州市</span> <a href=javascript:; class=city_a></a></div></dd><dd>有货</dd></dl><dl class=mgtop20><dt>购买数量</dt><dd><span class="reduce span">-</span> <input id=buynum class=buynum type=text value=1> <span class="increase span">+</span></dd></dl><div class=btnbox><a href=javascript:; class="buynow btn">立即购买</a> <a href=javascript:; class="addcart btn">加入购物车</a></div><div class=fapiao>格力商城是全国电子发票重点使用网上商城，于2016年5月全面使用 <span style=color:red>电子发票</span></div><div class=fenqi><img src=./images/gantanhao.png> <span style=color:red>此款产品支持分期购买</span></div><div class=shoucang><a><b></b><span>收藏宝贝</span></a></div></div></div><div class=footer></div><script src=./script/thirdplugins/jquery.min.js></script><script src=./script/thirdplugins/jquery.lazyload.min.js></script><script src=./script/thirdplugins/cookie.js></script><script src=./script/js/details.js></script><script src=./script/js/all.js></script><script>
+        $(function() {
+            $('.header').load('header.html', function() {
+                //1.导航栏滑动效果
+                navmove();
+
+                function navmove() {
+                    $('#menu_list>li').hover(function() {
+                        var _this = $(this).index();
+                        $('#menu_list>div').stop().animate({
+                            left: $('#menu_list>li')[_this].offsetLeft
+                        });
+                    }, function() {
+                        $('#menu_list>div').stop().animate({
+                            left: -100
+                        })
+                    });
+                };
+                //判断登录状态
+                if (getcookie('username')) {
+                    $('#logined').html('[退出]');
+                    $('#logined').click(function() {
+                        if (!confirm('你确定要退出当前账户并重新登录吗...')) {
+                            return false; //拒绝则阻止a标签事件
+                        }
+                    });
+                }
+
+            });
+            $('.footer').load('footer.html');
+        })
+    </script></body></html>
